@@ -46,4 +46,26 @@ public class NaverApiController {
             throw new RuntimeException("검색어 인코딩 실패", e);
         }
     }
+
+    @GetMapping("/blog/news")
+    public String searchNews(@RequestParam String keyword, Model model) {
+        try {
+            // 뉴스를 검색하기 위한 코드
+
+            return "newsSearchResult";
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("검색어 인코딩 실패", e);
+        }
+    }
+
+    @GetMapping("/blog/images")
+    public String searchImages(@RequestParam String keyword, Model model) {
+        try {
+            // 이미지를 검색하기 위한 코드
+
+            return "imageSearchResult";
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("검색어 인코딩 실패", e);
+        }
+    }
 }
